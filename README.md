@@ -16,7 +16,7 @@ This repository contains configurations for:
 
 Dotfiles are configuration files used by developer tools and applications.
 
-Instead of manually copying configuration files between machines, I store them in this repository and create symbolic links (symlinks) to the locations where applications expect them.
+Instead of manually recreating settings on every machine, I store them in this repository and create symbolic links (symlinks) to the locations where applications expect them.
 
 ### Benefits
 
@@ -28,33 +28,47 @@ Instead of manually copying configuration files between machines, I store them i
 
 ---
 
+## 📂 Repository Structure
+
+```text
+.
+├── README.md
+├── setup.sh
+├── nvim/
+├── nushell/
+│   ├── config.nu
+│   └── env.nu
+├── ghostty/
+└── wezterm/
+```
+
+---
+
 ## 🔗 How It Works
 
-This repository serves as the single source of truth for all configurations.
+Applications normally load configuration files from `~/.config`.
 
-The setup script creates symlinks so applications read configs directly from this repository:
+The setup script creates symlinks so applications read configurations directly from this repository.
 
-```bash
-~/.config/nvim    → ~/dotfiles/nvim
-~/.config/nushell → ~/dotfiles/nushell
-~/.config/ghostty → ~/dotfiles/ghostty
-~/.config/wezterm → ~/dotfiles/wezterm
+```text
+~/.config/nvim    → ~/.dotfiles/nvim
+~/.config/nushell → ~/.dotfiles/nushell
+~/.config/ghostty → ~/.dotfiles/ghostty
+~/.config/wezterm → ~/.dotfiles/wezterm
 ```
 
 ### What This Means
 
-* All configuration files live inside `~/dotfiles`
-* Applications read them through symlinks
-* Edit once, update everywhere
-* Changes take effect immediately
+* All configuration files live inside `~/.dotfiles`
+* Applications access them through symlinks
+* Changes are reflected immediately
+* Everything stays version controlled
 
 ---
 
 # 🛠️ New Machine Setup
 
-Follow these steps to restore your environment on a new machine.
-
-## 1️⃣ Install Git
+## 1. Install Git
 
 ### macOS
 
@@ -77,90 +91,96 @@ git --version
 
 ---
 
-## 2️⃣ Clone This Repository
+## 2. Clone the Repository
+
+Clone into a hidden folder:
 
 ```bash
-git clone git@github.com:Nazim6269/dotfiles.git
-cd dotfiles
+git clone git@github.com:Nazim6269/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
 ```
 
 ---
 
-## 3️⃣ Run the Setup Script
-
-This will automatically create all required symlinks.
+## 3. Run the Setup Script
 
 ```bash
 bash setup.sh
 ```
 
----
+The script will:
 
-## 4️⃣ Manual Setup (Optional)
-
-If you prefer not to use the setup script:
-
-### Create the Config Directory
-
-```bash
-mkdir -p ~/.config
-```
-
-### Create Symlinks
-
-```bash
-ln -sf ~/dotfiles/nvim ~/.config/nvim
-ln -sf ~/dotfiles/nushell ~/.config/nushell
-ln -sf ~/dotfiles/ghostty ~/.config/ghostty
-ln -sf ~/dotfiles/wezterm ~/.config/wezterm
-```
+* Create `~/.config` if needed
+* Remove existing linked configs
+* Create fresh symlinks
 
 ---
 
-## 5️⃣ Configure Git Identity (Optional)
+## 4. Verify Installation
+
+Check the created symlinks:
 
 ```bash
-git config --global user.name "Nazim6269"
-git config --global user.email "naizmdev10022001@gmail.com"
-```
-
----
-
-# ✅ Verify Installation
-
-Check that the symlinks were created correctly:
-
-```bash
-ls -l ~/.config
+ls -la ~/.config
 ```
 
 Expected output:
 
-```bash
-nvim    -> ~/dotfiles/nvim
-nushell -> ~/dotfiles/nushell
-ghostty -> ~/dotfiles/ghostty
-wezterm -> ~/dotfiles/wezterm
+```text
+nvim    -> ~/.dotfiles/nvim
+nushell -> ~/.dotfiles/nushell
+ghostty -> ~/.dotfiles/ghostty
+wezterm -> ~/.dotfiles/wezterm
 ```
 
 ---
 
-# 🔄 Daily Workflow
+# 🔄 Updating Dotfiles
 
 After making changes:
 
 ```bash
-cd ~/dotfiles
+cd ~/.dotfiles
 
 git add .
 git commit -m "update config"
+
 git push
+```
+
+---
+
+# 🔄 Sync on Another Machine
+
+```bash
+cd ~/.dotfiles
+
+git pull
+
+bash setup.sh
+```
+
+---
+
+# 🧹 Removing Dotfiles
+
+If you want to remove the symlinks:
+
+```bash
+rm -rf ~/.config/nvim
+rm -rf ~/.config/nushell
+rm -rf ~/.config/ghostty
+rm -rf ~/.config/wezterm
 ```
 
 ---
 
 # 🎉 Done
 
-Your development environment is now fully configured and ready to use.
+Your development environment can now be restored on any machine with:
 
-Clone. Link. Work.
+```bash
+git clone git@github.com:Nazim6269/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+bash setup.sh
+```
