@@ -1,98 +1,166 @@
-📦 Dotfiles
+# 🚀 Dotfiles
 
-This is my personal development environment setup for quickly restoring my tools on any new machine.
+My personal development environment setup for quickly restoring my workflow on any machine.
 
-It includes configurations for:
+This repository contains configurations for:
 
-Neovim
-Nushell
-Ghostty
-Git
+* 📝 Neovim
+* 🐚 Nushell
+* 👻 Ghostty
+* ⚡ WezTerm
+* 🔧 Git
 
-### What are dotfiles?
+---
 
-Dotfiles are configuration files for developer tools.
+## 📖 What Are Dotfiles?
 
-Instead of copying configs manually, we store them in this repository and link them to system locations using symlinks.
+Dotfiles are configuration files used by developer tools and applications.
 
-This makes your setup:
+Instead of manually copying configuration files between machines, I store them in this repository and create symbolic links (symlinks) to the locations where applications expect them.
 
-Portable
-Reproducible
-Version-controlled
+### Benefits
 
-### How it works (important)
+* ✅ Portable
+* ✅ Reproducible
+* ✅ Version Controlled
+* ✅ Easy to Back Up
+* ✅ Easy to Restore
 
-We use symlinks so the system reads configs directly from this repo:
+---
 
+## 🔗 How It Works
+
+This repository serves as the single source of truth for all configurations.
+
+The setup script creates symlinks so applications read configs directly from this repository:
+
+```bash
 ~/.config/nvim    → ~/dotfiles/nvim
 ~/.config/nushell → ~/dotfiles/nushell
 ~/.config/ghostty → ~/dotfiles/ghostty
+~/.config/wezterm → ~/dotfiles/wezterm
+```
 
-👉 What this means:
-All configs live inside this repository
-System reads them from ~/.config
-You only edit files in one place (~/dotfiles)
-Changes are instantly reflected
+### What This Means
 
-### 🚀 New Machine Setup (STEP BY STEP)
+* All configuration files live inside `~/dotfiles`
+* Applications read them through symlinks
+* Edit once, update everywhere
+* Changes take effect immediately
 
-1. Install prerequisites
-Install Git
+---
 
-Make sure Git is installed first:
+# 🛠️ New Machine Setup
 
-macOS (Homebrew optional):
+Follow these steps to restore your environment on a new machine.
+
+## 1️⃣ Install Git
+
+### macOS
+
+```bash
 brew install git
-Ubuntu / Debian:
-sudo apt update && sudo apt install git -y
-Arch Linux:
-sudo pacman -S git
+```
 
-1. Clone this repository
-git clone <git@github.com>:Nazim6269/dotfiles.git
+### Ubuntu / Debian
+
+```bash
+sudo apt update
+sudo apt install git -y
+```
+
+Verify installation:
+
+```bash
+git --version
+```
+
+---
+
+## 2️⃣ Clone This Repository
+
+```bash
+git clone git@github.com:Nazim6269/dotfiles.git
 cd dotfiles
+```
 
-2. Run setup script (recommended)
+---
 
-This will automatically link everything:
+## 3️⃣ Run the Setup Script
 
+This will automatically create all required symlinks.
+
+```bash
 bash setup.sh
+```
 
-1. Create config folder (if needed)
+---
 
+## 4️⃣ Manual Setup (Optional)
+
+If you prefer not to use the setup script:
+
+### Create the Config Directory
+
+```bash
 mkdir -p ~/.config
+```
 
-1. Symlinks (manual fallback)
+### Create Symlinks
 
-If you don’t use the script:
-
+```bash
 ln -sf ~/dotfiles/nvim ~/.config/nvim
 ln -sf ~/dotfiles/nushell ~/.config/nushell
 ln -sf ~/dotfiles/ghostty ~/.config/ghostty
+ln -sf ~/dotfiles/wezterm ~/.config/wezterm
+```
 
-1. Set Git identity (optional but recommended)
+---
+
+## 5️⃣ Configure Git Identity (Optional)
+
+```bash
 git config --global user.name "Nazim6269"
-git config --global user.email "<naizmdev10022001@gmail.com>"
+git config --global user.email "naizmdev10022001@gmail.com"
+```
 
-✅ Done
+---
 
-Your system is now fully set up 🎉
+# ✅ Verify Installation
 
-🧪 Verify setup
+Check that the symlinks were created correctly:
+
+```bash
 ls -l ~/.config
+```
 
 Expected output:
 
-nvim -> /home/user/dotfiles/nvim
-nushell -> /home/user/dotfiles/nushell
-ghostty -> /home/user/dotfiles/ghostty
+```bash
+nvim    -> ~/dotfiles/nvim
+nushell -> ~/dotfiles/nushell
+ghostty -> ~/dotfiles/ghostty
+wezterm -> ~/dotfiles/wezterm
+```
 
-### 🔁 Daily workflow
+---
 
-Update configs
+# 🔄 Daily Workflow
+
+After making changes:
+
+```bash
 cd ~/dotfiles
+
 git add .
 git commit -m "update config"
 git push
+```
 
+---
+
+# 🎉 Done
+
+Your development environment is now fully configured and ready to use.
+
+Clone. Link. Work.
