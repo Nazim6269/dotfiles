@@ -1,0 +1,327 @@
+mv ~/.config ~/.config.backup
+mv ~.local/share  ~/.local-share.backup
+sudo reboot
+gnome-session
+sudo systemctl start gdm3
+sudo systemctl start lightdm
+sudo systemctl set-default graphical.target
+clear
+sudo apt updae && sudo apt upgrade -y
+sudo apt updae, sudo apt upgrade -y
+sudo apt upda ;  sudo apt upgrade -y
+sudo apt update ;  sudo apt upgrade -y
+sudo apt install --reinstall gdm3 kali-desktop-gnome
+clear
+df -h
+sudo dpkg-reconfigure gdm3
+sudo reboot
+ls
+cd Projects/backend/
+clear
+ls
+cd
+ls
+which zoxide
+clear
+z b
+zoxide backend
+zoxide --help
+clear
+flatpak install flathub org.wezfurlong.wezterm<\n>
+sudo install flatpak
+curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --dearmor -o /usr/share/keyrings/wezterm-fury.gpg<\n>echo "deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *" | sudo tee /etc/apt/sources.list.d/wezterm.list<\n><\n>sudo apt update<\n>sudo apt install wezterm
+wezterm --version
+clear
+wezterm --version
+which wezterm
+ls
+clear
+cd .config
+ls
+which wezterm
+/
+ls
+cd user
+cd usr
+clear
+ls
+cd bin
+ls
+clear
+ls -l /usr/bin/wezterm
+cd
+mkdir -p ~/.config/wezterm<\n>nano ~/.config/wezterm/wezterm.lua
+ls
+cd .config
+ls
+mkdir wezterm
+ls
+cd wezterm/
+clear
+touch wezterm.lua
+code .
+clear
+ls
+which nvim
+clear
+ls
+ls -a
+update-alternatives --list x-terminal-emulator
+sudo update-alternatives --config x-terminal-emulator
+clear
+which wezterm
+clear
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+rm -rf ~/.config/nvim/.git
+nvim
+which nvim
+$nu.config-path
+which neovim
+nvim 
+sudo apt install neovim
+nvim
+clea
+rclear
+clear
+rm -rf ~/.config/nvim/.git
+clear
+which neovim
+clear
+nvim
+ls
+cd .config
+ls
+cd nushell/
+ls
+cd ..
+cd nvim
+ls
+ls -a
+nvim
+cd ..
+ls
+cd wezterm/
+nvim
+ls
+nvim wezterm.lua
+z confi
+cd .config/
+ls
+cd wezterm/
+ls
+nvim wezterm.lua
+z nu
+which zoxide
+clear
+cd ..
+cd nushell/
+ls
+clear
+cd .config/
+ls
+cd nvim
+ls
+nvim
+cd ..
+cd nushell/
+ls
+cd
+ls
+cd .config/wezterm/
+clea
+clear
+ls
+nvim wezterm.lua
+cd .config/wezterm/
+nvim wezterm.lua
+cd
+cd .config/nvim
+nvim
+cd ..
+cd wezterm/
+ls
+clear
+nvim wezterm.lua
+cd .config/wezterm/
+nvim
+cd .config/wezterm/
+clear
+cd .config/nvim/
+ls
+nvim
+cd ..
+ls
+cd
+$nu.config-path
+cd .config/nushell
+ls
+clear
+cd ..
+cd nvim/
+ls
+nvim
+clear
+nvim
+nivm
+nvim
+exit
+sudo apt update ;  sudo apt upgrade -y
+clear
+ping 8.8.8.8
+clear
+ls
+cd .config/wezterm/
+ls
+cd
+cd .config
+cd nvim/
+nvim wezterm.lua
+ls
+clear
+cd .config/wezterm/
+ls
+clear
+cd .config/
+cd ..
+cd nv
+cd nvim/
+clear
+nvim
+nvim wezterm.lua
+nvim
+cd
+cd Projects/frontend/
+ls
+clear
+nvim
+nvim wezterm.lua
+sudo apt update ;  sudo apt upgrade -y
+clear
+cd .config/
+ls
+ls -l
+clear
+ls -l
+cd ..
+clear
+ls
+mkdir .test
+ls -a
+clear
+cd .test
+touch index.html
+mkdir ontest
+ls
+ls -l
+clear
+cd
+git clone git@github.com:Nazim6269/test.git
+ls  ~/.ssh
+ssh-add -l
+ssh-add ~/.ssh/id_ed25519
+ssh T git@github.com
+ssh -T git@ghithub.com
+clear
+ssh -T git@ghithub.com
+clear
+ssh-keygen -t ed25519 -C "nazimdev1002200@gmail.com"
+ssh-add -l
+ssh-keygen -t ed25519 -C "nazimdev1002200@gmail.com"
+<\n>eval "$(ssh-agent -s)"<\n>ssh-add ~/.ssh/id_ed25519<\n>
+ssh-agent
+$env.SSH_AUTH_SOCK = "/home/nazimuddin/.ssh/agent/s.4MhcpJe51A.agent.hehFCjUtta"<\n>$env.SSH_AGENT_PID = 18043
+ssh-add ~/.ssh/id_ed25519
+ssh -T git@github.com
+ssh-add -l
+cat ~/.ssh/id_ed25519.pub
+ssh -T git@github.com
+clear
+git clone git@github.com:Nazim6269/test.git
+ls
+cd .test
+cd
+ls
+rm -rf test
+clear
+ls
+mkdir test
+cp -r ~/.test/ontest ~/test/
+cd
+ls
+cd test
+clear
+ls
+cd
+mv ~/.test/ontest ~/.test/ontest.bak
+ln -s ~/test/ontest ~/.test/ontest
+ls
+cd .t
+cd .test
+clear
+ls
+cd ~/test
+ls
+git init
+git branch -M main
+git add .
+cler
+clear
+git commit -m "initial: initial file"
+git remote add origin git@github.com:Nazim6269/test.git
+git add .
+git commit -m "initial: initial file"
+git status
+git remote
+git push -u origin main
+git remote -v
+ls -la
+find .
+ls -R
+cd ontest/
+touch index.html
+git add .
+git commit -m "initial: initial file"
+git push -u origin main
+git push -u origin main -f
+clear
+cd
+cd .test
+ls
+cd ontest/
+ls
+ls -a
+nvim index.html
+ls
+git status
+git add .
+git commit -m "docs: add doc"
+git push
+cd
+cd test/
+ls
+cd ontest/
+ls
+cd
+cd .test
+ls
+cd ontest.bak/
+ls
+cd
+ls
+cd .config/
+ls
+cd
+mkdir -p ~/nazimbak ; cp -r ~/.config/{nushell,wezterm,nvim} ~/nazimbak/
+mkdir ~/nazimbak ; cp -r ~/.config/{nushell,wezterm,nvim} ~/nazimbak/
+mkdir -p ~/nazimbak
+mkdir nazimbak
+cp -r ~/.config/nushell ~/nazimbak/<\n>cp -r ~/.config/wezterm ~/nazimbak/<\n>cp -r ~/.config/nvim ~/nazimbak/
+cd nazimbak
+ls
+clear
+cd
+mkdir -p ~/.dotfiles
+mkdir  ~/.dotfiles
+ls
+ls -a
+clear
