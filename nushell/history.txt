@@ -325,3 +325,42 @@ mkdir  ~/.dotfiles
 ls
 ls -a
 clear
+ln -sfn ~/.dotfiles/nushell ~/.config/nushell
+ls
+ls -a
+cd .config/
+clear
+ls
+nvim
+ls
+cd .config/
+ls
+cd nushell/
+ls
+clear
+cd ..
+cd wezterm/
+ls
+nvim wezterm.lua
+git status
+git add .
+git commit -m "fix:fix the issue in wezterm.lua file"
+git status
+nvim wezterm.lua
+clear
+git status
+git checkout --ours ../nvim/lazy-lock.json<\n>git add ../nvim/lazy-lock.json
+git checkout --ours ../nvim/lazy-lock.json<\n>git checkout --ours ../nvim/lazyvim.json<\n>git checkout --ours ../nvim/lua/config/autocmds.lua<\n>git checkout --ours ../nvim/lua/config/options.lua<\n>git checkout --ours ../nvim/lua/plugins/snacks.lua<\n>git checkout --ours ../wezterm.lua
+git add ../nvim/lazy-lock.json \<\n>        ../nvim/lazyvim.json \<\n>        ../nvim/lua/config/autocmds.lua \<\n>        ../nvim/lua/config/options.lua \<\n>        ../nvim/lua/plugins/snacks.lua \<\n>        ../wezterm.lua
+git status
+git checkout --ours ../nvim/lazy-lock.json<\n>git checkout --ours ../nvim/lazyvim.json<\n>git checkout --ours ../nvim/lua/config/autocmds.lua<\n>git checkout --ours ../nvim/lua/config/options.lua<\n>git checkout --ours ../nvim/lua/plugins/snacks.lua<\n>git checkout --ours ../wezterm.lua
+git status
+cd 
+cd .dotfiles
+ls
+clear
+git status
+git commit -m "fix:fix the issue in wezterm.lua file"
+clear
+cd .dotfiles
+git status
