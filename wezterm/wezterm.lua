@@ -8,6 +8,9 @@ local config = wezterm.config_builder()
 config = {
 	default_cursor_style = "BlinkingBar",
 }
+config.window_frame = {
+	active_titlebar_bg = "#333333",
+}
 config.colors = {
 	cursor_bg = "#47FF9C",
 	cursor_border = "#47FF9C",

@@ -364,3 +364,251 @@ git commit -m "fix:fix the issue in wezterm.lua file"
 clear
 cd .dotfiles
 git status
+clear
+git status
+cd
+ls
+rm -rf test
+ls -a
+rm -rf .test
+clear
+ls
+cd nazimbak
+cd
+rm -rf nazimbak
+ls
+clear
+cd .config/wezterm/
+ls
+nvim wezterm.lua
+ls
+clar
+which .fonts
+which .font
+clear
+fc-list | grep -i "fira"
+ls -a
+sudo apt update ;  sudo apt upgrade -y
+clear
+cd .local/
+ls
+cd share/
+ls
+mkdir -p ~/.local/share/fonts<\n>cd ~/.local/share/fonts<\n><\n>wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip<\n>unzip FiraCode.zip<\n>fc-cache -fv
+mkdir ~/.local/share/fonts<\n>cd ~/.local/share/fonts<\n><\n>wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip<\n>unzip FiraCode.zip<\n>fc-cache -fv
+clear
+fc-list | grep -i "FiraCode Nerd"
+clear
+ls
+curl -sS https://starship.rs/install.sh | sh
+ls
+cd
+ls
+which starship
+ls -a
+cd .local
+ls
+cd ..
+ls 
+ls -a
+starship --version
+clear
+cd .config
+ls
+config nu
+ls
+cd nushell/
+ls
+clear
+nvim
+ls
+cd .config
+git status
+nvim config.nu
+cd
+ls
+clear
+cd .config/
+ls
+clear
+nvim starship.toml
+ls -a
+nvim starship.toml
+cd nushell/
+nvim
+ls
+cd ..
+ls
+cd
+ln -s ~/.dotfiles/starship/starship.toml ~/.config/starship.toml
+cd .conf
+cd .config
+ls
+ln -s ~/.dotfiles/starship/starship.toml ~/.config/starship/starship.toml
+ls
+rm -rf starship.toml
+clear
+ls
+which starship
+clear
+ln -s ~/.dotfiles/starship/starship.toml ~/.config/starship/starship.toml
+mkdir -p ~/.config/starship
+mkdir  ~/.config/starship
+ln -s ~/.dotfiles/starship/starship.toml ~/.config/starship/starship.toml
+clear
+ls
+cd starship
+ls
+cd ..
+cd wezterm/
+ls
+cd ..
+rm -rf starship
+ls
+ln -s ~/.dotfiles/starship/starship.toml ~/.config/starship
+ls
+/
+cd .dotfiles
+ls
+which dotfiles
+cd
+which .dotfiles
+clear
+ls
+cd .dotfiles
+ls
+mkdir starship
+ls
+ls -l ~/.config/starship
+ls
+cd starship/
+ls
+touch starship.toml
+ls
+cd .config
+ls
+cd
+cd .config
+ls
+cd starship
+cd starship/
+ls
+cd starship
+cd starship/
+cd wezterm/
+ls
+clear
+ls
+cd ..
+ls
+yazi
+ls
+cd .dotfiles
+ls
+/
+cd
+which .dotfiles
+find .dotfiles
+ls
+clear
+ls -a
+cd .dotfiles
+ls
+nvim
+cd
+cd .config
+l
+ls
+ln -s ~/.dotfiles/starship ~/.config/starship
+clear
+ls -a
+cd .dotfiles
+cd ..
+cd .dotfiles
+ls
+nvim
+clear
+ls
+cd
+cd .config/
+ls
+cd starship/
+ls
+clear
+nvim
+exec nu
+starship --version
+$env.STARSHIP_CONFIG<\n>which starship<\n>starship init nu
+nvim
+clear
+which starship<\n>starship --version
+exec nu
+cd
+cd .config
+nvim
+ls
+cd nushell/
+ls
+clear
+nvim
+cd .dotfiles
+ls
+cd nushell/
+clear
+ls
+nvim
+ls
+clear
+ls
+cd ..
+ls
+cd .config
+cd
+cd .config
+clear
+ls -a
+cd nushell/
+ls
+clea
+nvim
+clear
+It's been this long since Nushell's first commit:<\n>7yrs 1month 3days 12hrs 20mins 47secs 855ms 54µs 941ns<\n><\n>Startup Time: 16ms 476µs 708ns<\n><\n>[ERROR] - (starship::config): Unable to parse the config file: TOML parse error at line 2, column 34<\n>  |<\n>2 | $env.PATH = ($env.PATH | prepend "/opt/homebrew/bin")<\n>  |                                  ^<\n>unexpected key or value, expected newline, `#`<\n><\n>[ERROR] - (starship::config): Unable to parse the config file: TOML parse error at line 2, column 34<\n>  |<\n>2 | $env.PATH = ($env.PATH | prepend "/opt/homebrew/bin")<\n>  |                                  ^<\n>unexpected key or value, expected newline, `#`<\n>clear
+It's been this long since Nushell's first commit:<\n>7yrs 1month 3days 12hrs 20mins 47secs 855ms 54µs 941ns<\n><\n>Startup Time: 16ms 476µs 708ns<\n><\n>[ERROR] - (starship::config): Unable to parse the config file: TOML parse error at line 2, column 34<\n>  |<\n>2 | $env.PATH = ($env.PATH | prepend "/opt/homebrew/bin")<\n>  |                                  ^<\n>unexpected key or value, expected newline, `#`<\n><\n>[ERROR] - (starship::config): Unable to parse the config file: TOML parse error at line 2, column 34<\n>  |<\n>2 | $env.PATH = ($env.PATH | prepend "/opt/homebrew/bin")<\n>  |                                  ^<\n>unexpected key or value, expected newline, `#`<\n>
+cd ..
+ls
+cd ..
+ls
+nvm
+exec nu
+clear
+cd .config
+cd
+cd .config
+nvim starship.toml
+exit
+nvim
+cd
+cd
+cd .config
+ls
+cd nushell/
+ls
+clear
+nvim
+exec nu
+ls
+cd .config
+cd ..
+cd .config
+ls
+cd Projects/
+ls
+clear
+ls
+clear
+cd
+ls
+cd .dotfiles/
+ls
+git status
+git ad .
