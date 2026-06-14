@@ -612,3 +612,16 @@ cd .dotfiles/
 ls
 git status
 git ad .
+git add .
+git commit -m "feat:add starship prompt"
+git push
+clear
+ls
+git status
+clear
+ls
+mkdir zsh
+mkdir vscode
+ls
+git status
+ls
