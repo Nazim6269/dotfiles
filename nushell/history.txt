@@ -625,3 +625,15 @@ mkdir vscode
 ls
 git status
 ls
+git add .
+git commit -m "docs: add vscode and zsh file"
+git push
+ls
+git status
+cd vscode/
+ls
+clear
+touch settings.json
+git status
+cd ..
+git status
