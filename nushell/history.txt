@@ -716,3 +716,14 @@ ls -a
 nvim  .vscode
 cd .dotfiles/
 clear
+nvim
+clear
+cd .dotfiles/
+ls
+nvim
+clear
+ls
+ping 8.8.8.8
+nvim
+cd .dotfiles/
+ls

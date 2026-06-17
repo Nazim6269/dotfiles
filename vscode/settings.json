@@ -2,7 +2,6 @@
   // =========================================================
   // EDITOR - General
   // =========================================================
-  // DUPLICATE: Both files set fontSize. File 1 uses 20, File 2 uses 24. Keeping File 2 (24).
   "editor.fontSize": 24,
   "editor.fontFamily": "Fira Code, Operator Mono",
   "editor.fontLigatures": true,
