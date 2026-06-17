@@ -637,3 +637,82 @@ touch settings.json
 git status
 cd ..
 git status
+git add .
+git commit -m "docs: add setting json file in vscode"
+git push
+cd
+cd Downloads/
+clear
+ls
+tar -xf flutter_linux_3.44.2-stable.tar.xz
+ls
+mv flutter ~/development/flutter
+cd
+mkdir ~/development
+mv ~/Downloads/flutter ~/development/flutter
+cd Downloads/
+ls
+clear
+cd 
+cd .config/
+ls
+cd nushell/
+ls
+nvim
+cd
+flutter doctor
+clear
+flutter --version
+clear
+ls
+cd .config/
+clear
+ls
+cd nushell/
+ls
+clear
+ls ~/development/flutter/bin
+$env.PATH | where ($it | str contains "flutter")
+clear
+flutter --version
+clear
+dart --version
+cd ..
+ls
+clear
+cd Projects/
+ls
+cd frontend/
+ls
+mkdir flutter
+cd flutter/
+flutter create real-estate
+flutter create real_estate
+cd real_estate/
+flutter run
+clear
+ls
+clear
+cd .dotfiles/
+ls
+cd wezterm/
+ls
+sudo apt update ;  sudo apt upgrade -y
+nvim
+git status
+git add .
+git commit -m "fix:  fix the background opacity"
+git push
+git pull
+clear
+git push
+clear
+cd
+cd .dotfiles/
+ls
+ls -a
+nvim .zshrc
+ls -a 
+nvim  .vscode
+cd .dotfiles/
+clear

@@ -1,1 +1,106 @@
-
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "shift+alt+l",
+    "command": "cursorEnd",
+    "when": "textInputFocus",
+  },
+  {
+    "key": "alt+o",
+    "command": "cursorMove",
+    "args": {
+      "to": "down",
+      "by": "wrappedLine",
+      "value": 5,
+    },
+    "when": "editorTextFocus",
+  },
+  {
+    "key": "alt+u",
+    "command": "cursorMove",
+    "args": {
+      "to": "up",
+      "by": "wrappedLine",
+      "value": 5,
+    },
+    "when": "editorTextFocus",
+  },
+  // {
+  //   "key": "alt+o",
+  //   "command": "scrollPageDown",
+  //   "args": { "by": "halfPage" },
+  //   "when": "editorTextFocus",
+  // },
+  // {
+  //   "key": "alt+u",
+  //   "command": "scrollPageUp",
+  //   "args": { "by": "halfPage" },
+  //   "when": "editorTextFocus",
+  // },
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus",
+  },
+  {
+    "key": "shift+a",
+    "command": "explorer.newFolder",
+    "when": "filesExplorerFocus && !inputFocus",
+  },
+  {
+    "key": "/",
+    "command": "list.find",
+    "when": "listFocus && explorerViewletVisible && !inputFocus"
+  },
+  {
+    "key": "n",
+    "command": "list.focusDown",
+    "when": "listFocus && explorerViewletVisible && !inputFocus"
+  },
+  {
+    "key": "shift+n",
+    "command": "list.focusUp",
+    "when": "listFocus && explorerViewletVisible && !inputFocus"
+  },
+  {
+    "key": "shift+d",
+    "command": "deleteFile",
+    "when": "filesExplorerFocus && !inputFocus",
+  },
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "filesExplorerFocus && !inputFocus",
+  },
+  {
+    "key": "alt+k",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && !editorReadOnly",
+  },
+  {
+    "key": "alt+j",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && !editorReadOnly",
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen",
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen",
+  },
+  {
+    "key": "backspace",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+        "list.select",
+      ],
+    },
+    "when": "editorTextFocus && vim.mode == 'Normal'",
+  },
+]

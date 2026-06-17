@@ -1,0 +1,329 @@
+{
+  // =========================================================
+  // EDITOR - General
+  // =========================================================
+  // DUPLICATE: Both files set fontSize. File 1 uses 20, File 2 uses 24. Keeping File 2 (24).
+  "editor.fontSize": 24,
+  "editor.fontFamily": "Fira Code, Operator Mono",
+  "editor.fontLigatures": true,
+  "editor.wordWrap": "on",
+  "editor.minimap.enabled": false,
+  "editor.fontWeight": "normal",
+  "editor.codeActions.triggerOnFocusChange": true,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "comment",
+        "settings": {
+          "fontStyle": "italic"
+        }
+      }
+    ]
+  },
+  "editor.autoClosingBrackets": "always",
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.guides.bracketPairs": true,
+  "editor.language.brackets": [],
+  "editor.inlineSuggest.enabled": true,
+
+  // =========================================================
+  // EDITOR - Cursor
+  // =========================================================
+  "editor.cursorSmoothCaretAnimation": "on",
+  // DUPLICATE: Both files set cursorBlinking. File 1 uses "smooth", File 2 uses "expand". Keeping File 2 ("expand").
+  "editor.cursorBlinking": "expand",
+  "animations.UseCursorColorForCursorAnimation": true,
+
+  // =========================================================
+  // EDITOR - Formatting
+  // =========================================================
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always",
+    "source.fixAll.tslint": "always",
+    "source.organizeImports": "always"
+  },
+  "eslint.alwaysShowStatus": true,
+
+  // =========================================================
+  // LANGUAGE-SPECIFIC OVERRIDES
+  // =========================================================
+
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "always",
+      "source.fixAll.tslint": "always",
+      "source.organizeImports": "always"
+    },
+    "eslint.alwaysShowStatus": true
+  },
+
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // DUPLICATE: Both files define [javascript]. File 1 uses prettier formatter; File 2 disables formatOnSave and sets null formatter.
+  // Keeping File 2 (disables auto-format, relying on ESLint instead).
+  "[javascript]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": null
+  },
+
+  // DUPLICATE: Both files define [javascriptreact]. File 1 uses prettier; File 2 disables format on save.
+  // Keeping File 2 (disables auto-format).
+  "[javascriptreact]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": null
+  },
+
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // =========================================================
+  // TERMINAL
+  // =========================================================
+  "terminal.integrated.fontSize": 24,
+  "terminal.integrated.fontWeight": "normal",
+  "terminal.integrated.fontFamily": "Fira Code, Operator Mono",
+
+  // =========================================================
+  // WORKBENCH
+  // =========================================================
+  "workbench.colorTheme": "Learn with Sumit - Peace of the eye",
+  // DUPLICATE: Both files set iconTheme. File 1 uses "vscode-icons", File 2 uses "material-icon-theme". Keeping File 2.
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.sideBar.location": "right",
+  "workbench.settings.applyToAllProfiles": [],
+
+  // Terminal color customizations
+  "workbench.colorCustomizations": {
+    "terminal.background": "#1D2021",
+    "terminal.foreground": "#A89984",
+    "terminalCursor.background": "#A89984",
+    "terminalCursor.foreground": "#A89984",
+    "terminal.ansiBlack": "#1D2021",
+    "terminal.ansiBlue": "#0D6678",
+    "terminal.ansiBrightBlack": "#665C54",
+    "terminal.ansiBrightBlue": "#0D6678",
+    "terminal.ansiBrightCyan": "#8BA59B",
+    "terminal.ansiBrightGreen": "#95C085",
+    "terminal.ansiBrightMagenta": "#8F4673",
+    "terminal.ansiBrightRed": "#FB543F",
+    "terminal.ansiBrightWhite": "#FDF4C1",
+    "terminal.ansiBrightYellow": "#FAC03B",
+    "terminal.ansiCyan": "#8BA59B",
+    "terminal.ansiGreen": "#95C085",
+    "terminal.ansiMagenta": "#8F4673",
+    "terminal.ansiRed": "#FB543F",
+    "terminal.ansiWhite": "#A89984",
+    "terminal.ansiYellow": "#FAC03B"
+  },
+
+  // =========================================================
+  // FILES & GIT
+  // =========================================================
+  // DUPLICATE: Both files set autoSave. File 1 uses "afterDelay", File 2 uses "onFocusChange". Keeping File 2.
+  "files.autoSave": "onFocusChange",
+  "git.confirmSync": false,
+  "explorer.confirmDelete": false,
+  "explorer.compactFolders": false,
+
+  // =========================================================
+  // WINDOW
+  // =========================================================
+  "window.zoomLevel": 0.5,
+
+  // =========================================================
+  // GITHUB COPILOT
+  // =========================================================
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "typescriptreact": true
+  },
+  "github.copilot.nextEditSuggestions.enabled": true,
+
+  // =========================================================
+  // VIM
+  // =========================================================
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.highlightedyank.enable": true,
+  "vim.leader": "<space>",
+
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["v", "a", "g"],
+      "after": ["g", "g", "V", "G"]
+    },
+    {
+      "before": ["y", "a", "g"],
+      "after": ["g", "g", "y", "G"]
+    },
+    {
+      "before": ["d", "a", "g"],
+      "after": ["g", "g", "d", "G"]
+    },
+    {
+      "before": ["c", "a", "g"],
+      "after": ["g", "g", "c", "G"]
+    },
+    {
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["lineBreakInsert"],
+      "silent": true
+    },
+    {
+      "before": ["<leader>", "<leader>"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "o", "p"],
+      "commands": ["workbench.view.explorer"]
+    },
+    {
+      "before": ["<leader>", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["<leader>", "j"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["<leader>", "k"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["<leader>", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    {
+      "before": ["<leader>", "q"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["<leader>", "w", "v"],
+      "commands": ["workbench.action.splitEditorRight"]
+    },
+    {
+      "before": ["<leader>", "w", "s"],
+      "commands": ["workbench.action.splitEditorDown"]
+    },
+    {
+      "before": ["<leader>", "s"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": ["<leader>", "f", "s"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    {
+      "before": ["g", "d"],
+      "commands": ["editor.action.revealDefinition"]
+    },
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.referenceSearch.trigger"]
+    },
+    {
+      "before": ["g", "o"],
+      "commands": ["workbench.action.gotoSymbol"]
+    },
+    {
+      "before": ["g", "."],
+      "commands": ["editor.action.codeAction"]
+    },
+    {
+      "before": ["g", "a"],
+      "commands": ["editor.action.quickFix"]
+    }
+  ],
+
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["g", "."],
+      "commands": ["editor.action.codeAction"]
+    },
+    {
+      "before": ["g", "a"],
+      "commands": ["editor.action.quickFix"]
+    }
+  ],
+
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-S-p>": false
+  },
+
+  // =========================================================
+  // EXTENSIONS
+  // =========================================================
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+
+  // =========================================================
+  // GITLENS
+  // =========================================================
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+
+  // =========================================================
+  // DART / FLUTTER
+  // =========================================================
+  "dart.flutterSdkPath": "/home/nazimuddin/flutter",
+
+  // =========================================================
+  // INDENT RAINBOW
+  // =========================================================
+  // Defining custom colors instead of default "Rainbow" for dark backgrounds.
+  "indentRainbow.colors": [
+    "rgba(255,255,74,0.2)",
+    "rgba(127,255,127,0.2)",
+    "rgba(255,127,255,0.2)",
+    "rgba(79,236,236,0.2)"
+  ],
+  // The indent color if the number of spaces is not a multiple of "tabSize".
+  "indentRainbow.errorColor": "rgba(128,32,32,0.6)",
+  // The indent color when there is a mix between spaces and tabs.
+  // To be disabled this coloring set this to an empty string.
+  "indentRainbow.tabmixColor": "rgba(128,32,96,0.6)",
+
+  // =========================================================
+  // TYPESCRIPT - Disabled warnings (uncomment to enable)
+  // =========================================================
+  //"typescript.suggests.autoImports": true,
+  //"typescript.disableAutomaticTypeAcquisition": true,
+  //"typescript.tsserver.experimental.enableProjectDiagnostics": false,
+  //"typescript.validate.enable": false
+  //"javascript.validate.enable": false
+}
