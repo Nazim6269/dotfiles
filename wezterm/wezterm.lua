@@ -84,6 +84,6 @@ config.color_scheme = favorites[math.random(#favorites)]
 config.initial_cols = 100
 config.initial_rows = 27
 config.font_size = 17
-config.window_background_opacity = 0.9
+--config.window_background_opacity = 0.9
 
 return config
