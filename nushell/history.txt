@@ -727,3 +727,8 @@ ping 8.8.8.8
 nvim
 cd .dotfiles/
 ls
+cd .dotfiles/
+git status
+ls
+cd .dotfiles/
+ls

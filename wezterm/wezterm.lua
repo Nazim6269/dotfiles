@@ -154,13 +154,13 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, cfg, hover, max_width)
 	local fg = is_active and active_fg or (hover and active_fg or inactive_fg)
 	local edge = is_active and active_bg or (hover and hover_bg or inactive_bg)
 
-	-- Use tab's user-set title if available, else fallback to tab index
-	local title = tab.tab_title
+	-- Use the pane's reported title (set by shell/editor via OSC sequence)
+	local title = tab.active_pane.title
+
 	if not title or #title == 0 then
 		title = "Tab " .. (tab.tab_index + 1)
 	end
 
-	-- Trim to fit max width
 	if #title > max_width - 4 then
 		title = wezterm.truncate_right(title, max_width - 4) .. "…"
 	end
@@ -178,35 +178,36 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, cfg, hover, max_width)
 		{ Text = RIGHT_PILL },
 	}
 end)
-
 -- =========================================================
 -- WINDOW TITLE BAR (mine — tab/window related, priority mine)
 -- =========================================================
-wezterm.on("format-window-title", function(tab, pane, tabs, panes, cfg)
-	local title = tab.tab_title
-	if not title or #title == 0 then
-		title = tab.active_pane.title
-	end
-	return "WezTerm  " .. title
-end)
+-- wezterm.on("format-window-title", function(tab, pane, tabs, panes, cfg)
+-- 	local title = tab.tab_title
+-- 	if not title or #title == 0 then
+-- 		title = tab.active_pane.title
+-- 	end
+-- 	return "WezTerm  " .. title
+-- end)
 
 -- =========================================================
 -- KEY BINDINGS (mine — tab/window related, priority mine)
 -- CTRL+SHIFT+T → prompt to rename current tab
 -- =========================================================
 config.keys = {
-	{
-		key = "t",
-		mods = "CTRL|SHIFT",
-		action = wezterm.action.PromptInputLine({
-			description = "Enter a name for this tab:",
-			action = wezterm.action_callback(function(window, pane, line)
-				if line then
-					window:active_tab():set_title(line)
-				end
-			end),
-		}),
-	},
+	-- {
+	-- 	key = "t",
+	-- 	mods = "CTRL|SHIFT",
+	-- 	action = wezterm.action.PromptInputLine({
+	-- 		description = "Enter a name for this tab:",
+	-- 		action = wezterm.action_callback(function(window, pane, line)
+	-- 			if line then
+	-- 				window:active_tab():set_title(line)
+	-- 			end
+	-- 		end),
+	-- 	}),
+	-- },
+	{ key = "w", mods = "CTRL|SHIFT", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
+	{ key = "q", mods = "CTRL|SHIFT", action = wezterm.action.QuitApplication },
 }
 
 -- =========================================================
