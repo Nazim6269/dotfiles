@@ -732,3 +732,12 @@ git status
 ls
 cd .dotfiles/
 ls
+nvim
+clear
+zsh
+cd
+ls -a
+cd .dotfiles/
+ls
+mkdir bash
+nvim .zshrc
