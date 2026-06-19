@@ -32,7 +32,7 @@ return {
     {
       "<leader>aa",
       function()
-        require("sidekick.cli").toggle({ filter = { installed = true } })
+        require("sidekick.cli").toggle({ filter = { installed = false } })
       end,
       desc = "Sidekick: Toggle CLI",
     },
