@@ -6,7 +6,7 @@ return {
         layouts = {
           sidebar = {
             layout = {
-              width = 22, -- default is usually wider
+              width = 28, -- default is usually wider
             },
           },
         },

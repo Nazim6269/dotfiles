@@ -741,3 +741,40 @@ cd .dotfiles/
 ls
 mkdir bash
 nvim .zshrc
+nvim
+cd
+ls
+cd parent
+mkdir parent
+clear
+mkdir child
+ls
+cd child/
+mkdir grandchild
+ln -s ~/parent/ ~/child/grandchild/
+ls
+cd grandchild/
+clea
+rclear
+ls
+cd
+ls
+clear
+rm -rf parent
+rm -rf child
+mkdir parent ; mkdir child/grandchild/
+ls
+sudo apt update ;  sudo apt upgrade -y
+clear
+cd .dotfiles/
+clear
+ls
+cd .dotfiles/
+nvim
+cd .dotfiles/
+nvim
+cd .dotfiles/
+nvim
+cd .dotfiles/
+clear
+nvim

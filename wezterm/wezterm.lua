@@ -20,8 +20,8 @@ config.font_size = 16.0
 -- =========================================================
 -- WINDOW SIZE (yours)
 -- =========================================================
-config.initial_cols = 100
-config.initial_rows = 27
+config.initial_cols = 110
+config.initial_rows = 30
 
 -- =========================================================
 -- WINDOW APPEARANCE
@@ -41,6 +41,17 @@ config.macos_window_background_blur = 20 -- only applies on macOS
 -- Window frame title bar bg (yours)
 config.window_frame = {
 	active_titlebar_bg = "#333333",
+	inactive_titlebar_bg = "#1a1a1a",
+	active_titlebar_fg = "#ffffff",
+	inactive_titlebar_fg = "#888888",
+	border_left_width = "1px",
+	border_right_width = "1px",
+	border_bottom_height = "1px",
+	border_top_height = "1px",
+	border_left_color = "#47FF9C",
+	border_right_color = "#47FF9C",
+	border_top_color = "#47FF9C",
+	border_bottom_color = "#47FF9C",
 }
 
 -- =========================================================
