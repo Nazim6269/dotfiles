@@ -1,41 +1,45 @@
-# #!/usr/bin/env bash
+#!/usr/bin/env bash
 
-# set -e
+set -e
 
-# echo "🚀 Setting up dotfiles..."
+echo "🚀 Setting up dotfiles..."
 
-# DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-# CONFIG_DIR="$HOME/.config"
+DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CONFIG_DIR="$HOME/.config"
 
-# echo "📂 Dotfiles location: $DOTFILES"
+echo "📂 Dotfiles location: $DOTFILES"
 
-# mkdir -p "$CONFIG_DIR"
+mkdir -p "$CONFIG_DIR"
 
-# CONFIGS=(
-# "nvim"
-# "nushell"
-# "ghostty"
-# "wezterm"
-# )
+#======================= Add config folder names here============================.
+# Each folder inside this dotfiles repo will be symlinked to the config directory.
+#==================== CONFIG_DIR=================================================
 
-# for config in "${CONFIGS[@]}"; do
-# SOURCE="$DOTFILES/$config"
-# TARGET="$CONFIG_DIR/$config"
+CONFIGS=(
+  "nvim"
+  "nushell"
+  "ghostty"
+  "wezterm"
+)
 
-# if [ ! -d "$SOURCE" ]; then
-# echo "⚠️ Skipping $config (not found)"
-# continue
-# fi
+for config in "${CONFIGS[@]}"; do
+  SOURCE="$DOTFILES/$config"
+  TARGET="$CONFIG_DIR/$config"
 
-# if [ -e "$TARGET" ] || [ -L "$TARGET" ]; then
-# echo "🗑️ Removing existing $TARGET"
-# rm -rf "$TARGET"
-# fi
+  if [ ! -d "$SOURCE" ]; then
+    echo "⚠️ Skipping $config (not found)"
+    continue
+  fi
 
-# echo "🔗 Linking $config"
-# ln -s "$SOURCE" "$TARGET"
-# done
+  if [ -e "$TARGET" ] || [ -L "$TARGET" ]; then
+    echo "🗑️ Removing existing $TARGET"
+    rm -rf "$TARGET"
+  fi
 
-# echo ""
-# echo "✅ Dotfiles linked successfully!"
-# echo "🎉 Setup complete."
+  echo "🔗 Linking $config"
+  ln -s "$SOURCE" "$TARGET"
+done
+
+echo ""
+echo "✅ Dotfiles linked successfully!"
+echo "🎉 Setup complete."
