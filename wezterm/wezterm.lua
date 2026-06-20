@@ -44,14 +44,6 @@ config.window_frame = {
 	inactive_titlebar_bg = "#1a1a1a",
 	active_titlebar_fg = "#ffffff",
 	inactive_titlebar_fg = "#888888",
-	border_left_width = "1px",
-	border_right_width = "1px",
-	border_bottom_height = "1px",
-	border_top_height = "1px",
-	border_left_color = "#47FF9C",
-	border_right_color = "#47FF9C",
-	border_top_color = "#47FF9C",
-	border_bottom_color = "#47FF9C",
 }
 
 -- =========================================================
