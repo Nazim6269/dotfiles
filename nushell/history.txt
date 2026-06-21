@@ -889,3 +889,200 @@ rm -rf noice.log
 clear
 ls
 git status
+nu --version
+clear
+cd
+sudo apt install neovim
+sudo apt install starship
+clear
+which wezterm
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator $(which wezterm) 50
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator "$(which wezterm)" 50
+clear
+sudo update-alternatives --config x-terminal-emulator
+which wezterm
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator $(which wezterm) 60
+clar
+clear
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/wezterm 60
+sudo update-alternatives --config x-terminal-emulator
+update-alternatives --display x-terminal-emulator
+x-terminal-emulator
+which wezterm<\n>ls /usr/bin | grep wez
+update-alternatives --display x-terminal-emulator
+clear
+cd .config/
+nvim
+update-alternatives --display x-terminal-emulator
+gsettings get org.gnome.settings-daemon.plugins.media-keys terminal
+cd Downloads/
+ls
+tar -xzf ./android-studio-quail1-patch2-linux.tar.gz
+ls
+cd android-studio/
+ls
+cd
+mkdir apps
+mv ~/Downloads/android-studio apps/
+ls
+clear
+cd Downloads/
+ls
+cd ..
+cd apps/
+ls
+clear
+cd android-studio/
+ls
+cd bin/
+ls
+./studio.sh
+nano ~/.local/share/applications/android-studio.desktop
+update-desktop-database ~/.local/share/applications
+whoami
+ls -a
+cd .local
+ls
+cd share/
+ls
+cd applications/
+ls
+clear
+ls
+cd
+ls
+mkdir projects
+mkdir flutter  
+flutter
+sudo apt-get update -y && sudo apt-get upgrade -y<\n>sudo apt-get install -y curl git unzip xz-utils zip libglu1-mesa<\n>
+sudo apt-get update -y ; sudo apt-get upgrade -y<\n>sudo apt-get install -y curl git unzip xz-utils zip libglu1-mesa<\n>
+clear
+ls
+ls -a
+clear
+cd
+ls
+cd Downloads/
+ls
+tar -xzf ./flutter_linux_3.44.2-stable.tar.xz
+tar -xf flutter_linux_3.44.2-stable.tar.xz
+mv flutter ~/apps/
+cler
+ls
+cd
+cd apps/
+ls
+flutter --version
+cd .dotfiles/
+cd 
+cd .dotfiles/
+ls
+clear
+ls
+nvim
+flutter --version
+clear
+cd
+cd projects/
+ls
+mkdir flutter
+ls
+cd flutter/
+flutter create real_estate
+clear
+sudo apt install cmake
+clea
+clear
+sudo apt install liblzma-dev libstdc++-12-dev
+sudo apt update<\n>sudo apt install ninja-build cmake g++ clang pkg-config libgtk-3-dev
+sudo apt install liblzma-dev libstdc++-12-dev
+clear
+cd projects/
+cd flutter/
+ls
+cd real_estate/
+flutter run
+cd Downloads/
+ls
+tar -xzf ./tsetup.6.9.3.tar.xz
+tar -xf ./tsetup.6.9.3.tar.xz
+ls
+rm
+rm -rm Telegram/
+rm -rm Telegram
+rf -rf Telegram
+clear
+ls
+cd ..
+cd projects/
+git clone git@github.com:backbencherstudio/ckapparel_limitless_app.git
+clear
+cd ckapparel_limitless_app/
+flutter run
+nvim
+clear
+cd ckapparel_limitless_app/
+cd pro
+cd projects
+cd flutter/
+cd ckapparel_limitless_app/
+ls
+fzf
+clear
+cd real_estate/
+ls
+flutter run
+clear
+flutter run
+clear
+ls
+rm -rf build
+ls
+clear
+flutter run
+clear
+flutter run
+git init
+git branch -M main
+git add .
+git commit -m "feat: add initial setup and home screen design"
+git config --global user.email "nazimdev10022001@gmail.com"
+git config --global user.name "Nazim6269"
+git commit -m "feat: add initial setup and home screen design"
+git remote add origin git@github.com:Nazim6269/RealState_App.git
+git push -u origin main
+clea
+rclear
+clear
+flutter run
+flutter run
+clear
+cd projects
+ls
+cd flutter/
+cd ..
+rm -rf ckapparel_limitless_app
+clear
+ls
+cd flutter/
+flutter run
+cd real_estate/
+ls
+clear
+flutter run
+clear
+flutter run
+clear
+flutter run
+clear
+cd
+cd .config/
+cd nvim/
+nvim
+flutter run
+nvim
+cd
+cd .dotfiles/
+clear
+ls
+git status

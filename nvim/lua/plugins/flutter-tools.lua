@@ -8,7 +8,7 @@ return {
     {
       "<leader>fc",
       function()
-        require("config.dartls.run_commands").commands()
+        require("config.dartls").commands()
       end,
       ft = { "yaml", "dart", "log" },
       desc = "Flutter: Show commands",
