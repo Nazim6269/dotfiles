@@ -778,3 +778,105 @@ nvim
 cd .dotfiles/
 clear
 nvim
+nvim
+kill
+sudo apt update ;  sudo apt upgrade -y
+clear
+ls
+fzf
+ls
+clear
+fzf -v
+fzf -V
+clear
+ls -a
+ls
+rm -rf tmux
+cd .config/
+ls
+rm -rf tmux
+clear
+ls
+clear
+cd
+ls
+cd Projects/
+ls
+cd frontend/
+ls
+cd flutter/
+ls
+clear
+cd real_estate/
+nvm
+nvim
+flutter create .
+ls
+flutter run
+sudo apt install cmake
+clear
+flutter run
+sudo apt update<\n><\n>sudo apt install -y \<\n>    clang \<\n>    cmake \<\n>    ninja-build \<\n>    pkg-config \<\n>    libgtk-3-dev \<\n>    g++
+sudo apt install -y clang
+sudo apt install -y ninja-build
+sudo apt install -y g++
+sudo apt install -y pkg-config
+sudo apt install -y libgtk-3-dev
+sudo apt update
+sudo apt upgrade
+cmake --version<\n>ninja --version<\n>g++ --version
+clear
+flutter clean<\n>flutter pub get<\n>flutter doctor<\n>flutter run -d linux
+clear
+cd
+cd .config/
+cd wezterm/
+nvim
+z real
+fzf
+cd
+cd Projects/frontend/
+ls
+cd flutter/
+cd real_estate/
+git status
+git remote -v
+git pull
+nvim
+ls
+nvim
+clear
+nvim main.dart
+nvim
+cd
+cd .config/
+nvim
+nvim lua
+cd nvim/
+nvim
+cd
+cd Projects/frontend/flutter/
+cd real_estate/
+nvim
+cd
+cd .config/nvim/
+nvim
+nvim main.dart
+cd
+cd .config/
+nvim
+ls
+cd
+cd .dotfiles/
+clear
+ls
+git st
+git status
+nvim
+clar
+clear
+nvim
+clear
+nvim
+clear
+git status
