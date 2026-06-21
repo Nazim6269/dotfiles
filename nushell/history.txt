@@ -880,3 +880,12 @@ clear
 nvim
 clear
 git status
+git add .
+git commit -m "refactor: refactor the lua folder"
+git push
+clear
+ls
+rm -rf noice.log
+clear
+ls
+git status
