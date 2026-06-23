@@ -209,6 +209,19 @@ config.keys = {
 	-- 		end),
 	-- 	}),
 	-- },
+	--
+	{
+		key = "Enter",
+		mods = "ALT",
+		action = wezterm.action_callback(function(window, pane)
+			local dims = window:get_dimensions()
+			if dims.is_maximized then
+				window:restore()
+			else
+				window:maximize()
+			end
+		end),
+	},
 	{ key = "w", mods = "CTRL|SHIFT", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
 	{ key = "q", mods = "CTRL|SHIFT", action = wezterm.action.QuitApplication },
 }
