@@ -1086,3 +1086,118 @@ cd .dotfiles/
 clear
 ls
 git status
+git add .
+git commit -m "fix: fix the flutter command config"
+git push
+fzf
+zsh
+clear
+zsh
+ls
+ls -
+ls -a
+sudo apt update ; sudo apt install fzf
+sudo apt automremove
+sudo apt autoremove
+fzf -v
+fzf -V
+fzf --version
+clear
+fzf
+clear
+ls
+cd flutter/
+ls
+cler
+rm -rf flutter
+cd ..
+rm -rf flutter
+cd Projects/frontend/flutter
+cd Projects
+cd projects/
+ls
+cd flutter/
+ls
+cd real_estate/
+exit
+cd
+cd .dotfiles
+ls
+cd nvim/
+nvim
+ls
+cd projects/
+ls
+celar
+cd flutter/
+ls
+clear
+cd real_estate/
+ls
+cd
+cd  nv
+clear
+cd .dotfiles
+ls
+cd wezterm/
+ls
+cd wezterm/
+ls
+clear
+nvim
+git add .
+git commit -m "feat: add measurable windwo size in wezterm"
+git push
+nvim
+sudo apt update ; sudo apt upgrade -y
+fzf
+cd projects/flutter/real_estate/
+clear
+flutter pub get
+flutter upgrade
+fluttr pub get
+flutter pub get
+dart run build_runner build --delete-conflicting-outputs
+opencode
+dart run build_runner build --delete-conflicting-outputs
+nvim
+flutter pub run build_runner build --delete-conflicting-outputs
+clear
+dart run build_runner build
+bun add -g opencode-ai
+curl -fsSL https://opencode.ai/install | bash
+opencode -v
+zsh
+bash
+which opencode
+ls
+cd
+ls -a
+cd .local
+clear
+ls
+cd ..
+ls -a
+fzf
+cd .dotfiles
+ls
+cd nushell/
+nvim
+clear
+opencode -v
+clear
+cd
+cd projects/flutter/real_estate/
+nvim
+opencode
+sudo apt update ; sudo apt upgrade -y
+cd .dotfiles
+cd nvim
+nvim
+cd
+cd projects/flutter/real_estate/
+nvim
+clear
+ls
+cd .dotfiles
+ls
