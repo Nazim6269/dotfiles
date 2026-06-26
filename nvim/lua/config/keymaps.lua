@@ -8,3 +8,5 @@ vim.keymap.set("n", "g.", function()
     vim.notify("No code action available", vim.log.levels.INFO)
   end
 end, { desc = "LSP Code Action" })
+
+vim.keymap.set("n", "<Tab>", "za", { desc = "Toggle fold" })
