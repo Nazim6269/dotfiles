@@ -1201,3 +1201,147 @@ clear
 ls
 cd .dotfiles
 ls
+zoxide
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+cd .dotfiles
+zoxide
+which zoxide
+nvim
+ls
+cd
+ls
+ls -a
+cd .local/bin
+ls
+clear
+nvim
+z
+zoxide
+~/.local/bin/zoxide --version
+which -a zoxaid
+zoxaid
+zoside
+zoxide
+clea
+rls
+cd
+clear
+echo $env.PATH
+which zoxide
+clear
+zoxide init nushell | save -f ~/.zoxide.nu
+zoxide --version
+clear
+$nu.config-path
+clear
+z foo
+zi foo
+z realstate
+zoxide init nushell | save -f ~/.zoxide.nu
+clear
+ls
+source ~/.zoxide.nu
+ls -a
+z foo
+zi foo
+cler
+clear
+nvim .zoxide.nu
+cd .dotfiles
+cd
+z realstate
+zoxide
+clear
+z nvim
+cd projects/flutter/real_estate/
+clear
+dart run build_runner build --delete-conflicting-outputs
+nvim
+sudo apt update ; sudo apt upgrade -y
+clear
+cd projects/flutter/real_estate/
+cd
+ls
+git status
+git pull
+clear
+cd .dotfiles
+nvim
+clear
+cd .dotfiles
+nvim
+cd projects/flutter/api_test/
+cd ..
+cd real_estate/
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/install.sh)"<\n>
+ls
+cd
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/install.sh)"<\n>
+ls
+ls -a
+cler
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/install.sh)"<\n>
+mkdir /bin/bash
+clear
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/install.sh)"<\n>
+clar
+clear
+cd projects/flutter/real_estate/
+sudo add-apt-repository ppa:mkasberg/ghostty-ubuntu<\n>sudo apt update<\n>sudo apt install ghostty
+clear
+nvim
+clear
+ls
+ls -a
+clear
+cd .config/
+nvim
+cd
+/
+ls
+cd bin/
+ls
+clear
+ls
+cd
+cler
+clear
+ls
+cd projects/flutter/real_estate/
+cd projects/
+cd flutter/
+ls
+clear
+flutte create test
+flutter create widget_tes
+clear
+cd widget_tes/
+flutter run
+nvim
+clear
+cd .dotfiles
+ls
+nvim
+cd .dotfiles
+nvim
+ls
+clear
+cd projects/
+cd flutter/
+cd wi
+mv widget_tes widget_test
+ls
+cd widget_test/
+clear
+cd .config/
+cd
+cd .config/
+nvim
+cd nvim
+nvim
+cd ..
+nvim
+cd ..
+cd .dotfiles
+git status
+clear

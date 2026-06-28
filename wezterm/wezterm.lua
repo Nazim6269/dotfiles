@@ -72,8 +72,8 @@ local new_btn_fg = "#7aa3cc" -- + button color
 -- =========================================================
 config.colors = {
 	-- Cursor (yours)
-	cursor_bg = "#47FF9C",
-	cursor_border = "#47FF9C",
+	cursor_bg = "#1e90ff",
+	cursor_border = "1e90ff",
 
 	-- Selection (yours)
 	selection_fg = "black",
@@ -232,5 +232,5 @@ config.keys = {
 config.audible_bell = "Disabled"
 config.scrollback_lines = 10000
 config.default_cursor_style = "BlinkingBar"
-
+config.cursor_thickness = 2
 return config

@@ -20,7 +20,7 @@ window-save-state = always
 
 # Font
 font-family = "MesloLGS NF"
-font-size = 18
+font-size = 15
 
 # Mouse & Interaction
 mouse-hide-while-typing = true
