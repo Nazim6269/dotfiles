@@ -1,118 +1,119 @@
--- Set lualine as statusline (bubbles)
 return {
   "nvim-lualine/lualine.nvim",
-  config = function()
-    local onedark = {
-      blue = "#61afef",
-      green = "#98c379",
-      purple = "#c678dd",
-      cyan = "#56b6c2",
-      red = "#e06c75",
-      yellow = "#e5c07b",
-      fg = "#abb2bf",
-      bg = "#282c34",
-      gray1 = "#828997",
-      gray3 = "#3e4452",
-    }
+  event = "VeryLazy",
+  opts = function()
+    -- PERF: we don't need this lualine require madness 🤷
+    local lualine_require = require("lualine_require")
+    lualine_require.require = require
 
-    local nord = {
-      blue = "#81a1c1",
-      green = "#a3be8c",
-      purple = "#b48ead",
-      cyan = "#88c0d0",
-      red = "#bf616a",
-      yellow = "#ebcb8b",
-      fg = "#d8dee9",
-      bg = "#2e3440",
-      gray1 = "#4c566a",
-      gray3 = "#434c5e",
-    }
+    local icons = LazyVim.config.icons
 
-    -- "Bubbles" theme: `c` (and the unspecified x/y/z, which fall back to
-    -- `c`) are left with no background so they blend into the statusline
-    -- bg. Only `a` and `b` are filled. That, plus section_separators and
-    -- the explicit caps on mode/location below, produces the two pills.
-    local function bubbles_theme(c)
-      return {
-        normal = {
-          a = { fg = c.bg, bg = c.green, gui = "bold" },
-          b = { fg = c.fg, bg = c.gray3 },
-          c = { fg = c.fg },
-        },
-        insert = { a = { fg = c.bg, bg = c.blue, gui = "bold" } },
-        visual = { a = { fg = c.bg, bg = c.purple, gui = "bold" } },
-        terminal = { a = { fg = c.bg, bg = c.cyan, gui = "bold" } },
-        replace = { a = { fg = c.bg, bg = c.red, gui = "bold" } },
-        inactive = {
-          a = { fg = c.gray1, bg = c.bg },
-          b = { fg = c.gray1, bg = c.bg },
-          c = { fg = c.gray1 },
-        },
-      }
-    end
+    vim.o.laststatus = vim.g.lualine_laststatus
 
-    -- Pick palette based on NVIM_THEME (defaults to nord)
-    local palettes = { onedark = onedark, nord = nord }
-    local env_theme = os.getenv("NVIM_THEME") or "nord"
-    local colors = palettes[env_theme] or nord
-
-    local hide_in_width = function()
-      return vim.fn.winwidth(0) > 80
-    end
-
-    local diagnostics = {
-      "diagnostics",
-      sources = { "nvim_diagnostic" },
-      sections = { "error", "warn" },
-      symbols = { error = " ", warn = " ", info = " ", hint = " " },
-      colored = false,
-      update_in_insert = false,
-      always_visible = true,
-    }
-
-    local diff = {
-      "diff",
-      colored = false,
-      symbols = { added = " ", modified = " ", removed = " " },
-      cond = hide_in_width,
-    }
-
-    require("lualine").setup({
+    local opts = {
       options = {
-        icons_enabled = true,
-        theme = bubbles_theme(colors),
+        theme = "auto",
+        globalstatus = vim.o.laststatus == 3,
+        disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter", "snacks_dashboard" } },
         component_separators = "",
-        section_separators = { left = "", right = "" },
-        disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
-        always_divide_middle = true,
-        globalstatus = true,
+        section_separators = { left = "", right = "" },
       },
       sections = {
-        lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
-        lualine_b = {
-          { "filename", file_status = true, path = 0 },
-          "branch",
-          diff,
-        },
+        lualine_a = { "mode" },
+        lualine_b = { "branch" },
+
         lualine_c = {
-          "%=", -- spacer: pushes x/y/z to the right, opening the middle gap
+          LazyVim.lualine.root_dir(),
+          {
+            "diagnostics",
+            symbols = {
+              error = icons.diagnostics.Error,
+              warn = icons.diagnostics.Warn,
+              info = icons.diagnostics.Info,
+              hint = icons.diagnostics.Hint,
+            },
+          },
+          { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
+          { LazyVim.lualine.pretty_path() },
         },
-        lualine_x = { diagnostics },
-        lualine_y = { "encoding", "filetype" },
+        lualine_x = {
+          Snacks.profiler.status(),
+          -- stylua: ignore
+          {
+            function() return require("noice").api.status.command.get() end,
+            cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
+            color = function() return { fg = Snacks.util.color("Statement") } end,
+          },
+          -- stylua: ignore
+          {
+            function() return require("noice").api.status.mode.get() end,
+            cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
+            color = function() return { fg = Snacks.util.color("Constant") } end,
+          },
+          -- stylua: ignore
+          {
+            function() return "  " .. require("dap").status() end,
+            cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
+            color = function() return { fg = Snacks.util.color("Debug") } end,
+          },
+          -- stylua: ignore
+          {
+            require("lazy.status").updates,
+            cond = require("lazy.status").has_updates,
+            color = function() return { fg = Snacks.util.color("Special") } end,
+          },
+          {
+            "diff",
+            symbols = {
+              added = icons.git.added,
+              modified = icons.git.modified,
+              removed = icons.git.removed,
+            },
+            source = function()
+              local gitsigns = vim.b.gitsigns_status_dict
+              if gitsigns then
+                return {
+                  added = gitsigns.added,
+                  modified = gitsigns.changed,
+                  removed = gitsigns.removed,
+                }
+              end
+            end,
+          },
+        },
+        lualine_y = {
+          { "progress", separator = " ", padding = { left = 1, right = 0 } },
+          { "location", padding = { left = 0, right = 1 } },
+        },
         lualine_z = {
-          { "location", separator = { right = "" }, left_padding = 2 },
+          function()
+            return " " .. os.date("%R")
+          end,
         },
       },
-      inactive_sections = {
-        lualine_a = {},
-        lualine_b = { { "filename", path = 1 } },
-        lualine_c = {},
-        lualine_x = {},
-        lualine_y = { "location" },
-        lualine_z = {},
-      },
-      tabline = {},
-      extensions = { "fugitive" },
-    })
+      extensions = { "neo-tree", "lazy", "fzf" },
+    }
+
+    -- do not add trouble symbols if aerial is enabled
+    -- And allow it to be overriden for some buffer types (see autocmds)
+    if vim.g.trouble_lualine and LazyVim.has("trouble.nvim") then
+      local trouble = require("trouble")
+      local symbols = trouble.statusline({
+        mode = "symbols",
+        groups = {},
+        title = false,
+        filter = { range = true },
+        format = "{kind_icon}{symbol.name:Normal}",
+        hl_group = "lualine_c_normal",
+      })
+      table.insert(opts.sections.lualine_c, {
+        symbols and symbols.get,
+        cond = function()
+          return vim.b.trouble_lualine ~= false and symbols.has()
+        end,
+      })
+    end
+
+    return opts
   end,
 }
