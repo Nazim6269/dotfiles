@@ -11,6 +11,14 @@ return {
           },
         },
       },
+      indent = {
+        animate = { enabled = false },
+        scope = {
+          only_current = true,
+          underline = true,
+          char = "▏",
+        },
+      },
     },
   },
 }

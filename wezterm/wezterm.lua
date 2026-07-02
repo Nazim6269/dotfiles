@@ -11,22 +11,16 @@ local favorites = {
 math.randomseed(os.time())
 config.color_scheme = favorites[math.random(#favorites)]
 
--- =========================================================
 -- FONT (yours)
--- =========================================================
 config.font = wezterm.font("FiraCode Nerd Font", { weight = "Regular" })
-config.font_size = 16.0
+config.font_size = 18.0
+config.underline_thickness = "2pt"
+config.underline_position = "-4pt"
 
--- =========================================================
 -- WINDOW SIZE (yours)
--- =========================================================
 config.initial_cols = 110
 config.initial_rows = 30
-
--- =========================================================
 -- WINDOW APPEARANCE
--- =========================================================
--- DUPLICATE window_decorations: mine adds borderless resize handle
 config.window_decorations = "RESIZE"
 config.window_padding = {
 	left = 12,
@@ -34,11 +28,8 @@ config.window_padding = {
 	top = 8,
 	bottom = 8,
 }
--- Yours had this commented out; keeping it commented. Uncomment to enable.
--- config.window_background_opacity = 0.9
+config.window_background_opacity = 0.9
 config.macos_window_background_blur = 20 -- only applies on macOS
-
--- Window frame title bar bg (yours)
 config.window_frame = {
 	active_titlebar_bg = "#333333",
 	inactive_titlebar_bg = "#1a1a1a",
@@ -46,9 +37,7 @@ config.window_frame = {
 	inactive_titlebar_fg = "#888888",
 }
 
--- =========================================================
--- TAB BAR - General (mine — tab/window related, priority mine)
--- =========================================================
+-- TAB BAR -
 config.enable_tab_bar = true
 config.use_fancy_tab_bar = false -- must be false for full custom styling
 config.tab_bar_at_bottom = false
@@ -56,9 +45,7 @@ config.hide_tab_bar_if_only_one_tab = false
 config.tab_max_width = 32
 config.show_new_tab_button_in_tab_bar = true
 
--- =========================================================
 -- TAB BAR - Rounded / Bubbly Colors (mine — tab/window related, priority mine)
--- =========================================================
 local tab_bg = "#0d1b2a" -- overall bar background
 local active_bg = "#1e90ff" -- active tab fill (bright blue)
 local active_fg = "#ffffff" -- active tab text
@@ -67,23 +54,13 @@ local inactive_fg = "#7aa3cc" -- inactive tab text
 local hover_bg = "#2a4a6a" -- hovered inactive tab
 local new_btn_fg = "#7aa3cc" -- + button color
 
--- =========================================================
--- COLORS - merged (tab_bar = mine; rest = yours)
--- =========================================================
 config.colors = {
-	-- Cursor (yours)
 	cursor_bg = "#1e90ff",
 	cursor_border = "1e90ff",
-
-	-- Selection (yours)
 	selection_fg = "black",
 	selection_bg = "#fffacd",
-
-	-- Scrollbar & split (yours)
 	scrollbar_thumb = "#222222",
 	split = "#444444",
-
-	-- ANSI colors (yours)
 	ansi = {
 		"black",
 		"maroon",
@@ -94,8 +71,6 @@ config.colors = {
 		"teal",
 		"silver",
 	},
-
-	-- Bright colors (yours)
 	brights = {
 		"grey",
 		"red",
@@ -106,11 +81,8 @@ config.colors = {
 		"aqua",
 		"white",
 	},
-
-	-- Tab bar colors (mine — tab/window related, priority mine)
 	tab_bar = {
 		background = tab_bg,
-
 		active_tab = {
 			bg_color = active_bg,
 			fg_color = active_fg,
