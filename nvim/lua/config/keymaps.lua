@@ -10,3 +10,4 @@ vim.keymap.set("n", "g.", function()
 end, { desc = "LSP Code Action" })
 
 vim.keymap.set("n", "<Tab>", "za", { desc = "Toggle fold" })
+-- vim.keymap.set("t", "<C-o>", "<C-\\><C-n>", { desc = "Exit Term mode", })
