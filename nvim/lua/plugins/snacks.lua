@@ -1,6 +1,15 @@
 return {
   {
     "folke/snacks.nvim",
+    keys = {
+      {
+        "//",
+        function()
+          Snacks.picker.lines()
+        end,
+        desc = "which_key_ignore",
+      },
+    },
     opts = {
       picker = {
         layouts = {
