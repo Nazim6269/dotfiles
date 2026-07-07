@@ -23,9 +23,26 @@ return {
       indent = {
         animate = { enabled = false },
         scope = {
+          enabled = true,
+          priority = 1000,
           only_current = true,
           underline = true,
           char = "▏",
+        },
+        chunk = {
+          -- When enabled, scopes will be rendered as chunks, except for the
+          -- top-level scope which will be rendered as a scope.
+          enabled = true,
+          priority = 3000,
+          char = {
+            corner_top = "┌",
+            corner_bottom = "└",
+            -- corner_top = "╭",
+            -- corner_bottom = "╰",
+            horizontal = "─",
+            vertical = "│",
+            arrow = "▶",
+          },
         },
       },
     },
