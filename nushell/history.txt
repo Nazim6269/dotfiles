@@ -1345,3 +1345,221 @@ cd ..
 cd .dotfiles
 git status
 clear
+git add .
+git commit -m "chore: change some setting in wezterm terminal"
+git push
+cd projects/flutter/widget_test/
+nvim
+cd
+cd .dotfiles
+nvim
+cd .dotfiles
+git pull
+clear
+cd 
+cd projects/flutter/
+ls
+mkdir riverpod
+cd riverpod/
+cd ..
+rm riverpod/
+ls
+flutter create riverpod
+cd riverpod/
+flutter run
+cd
+cd .dotfiles/
+nvim
+sudo apt update ; sudo apt upgrade -y
+clear
+flutter pub add flutter_riverpod
+opencode
+npm i -g opencode
+npm -g i opencode
+bun -g i opencode
+cd
+npm --v
+cd .dotfiles/
+nvim
+zah
+zsh
+exit
+npm --v
+zah
+zsh
+flutter pub add flutter_riverpod
+cd projects/flutter/
+ls
+cd riverpod/
+nvim
+cd ..
+ls
+mkdir nextjs
+cd nextjs/
+git clone git@github.com:Nazim6269/STREET_FOOD_DASHBOARD.git
+clear
+ls
+cd STREET_FOOD_DASHBOARD/
+ls
+npm i
+node -v
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash<\n>nvm install --lts
+cd
+ls -a
+/
+ls -a
+cd
+ls a-
+ls -a
+cd .dotfiles/
+nvim
+node -v
+npm -v
+cd .dotfiles/
+nvimv
+nvim
+cd nushell/
+nvim
+clear
+source-env ~/.config/nushell/env.nu<\n>source ~/.config/nushell/config.nu
+which node
+node -v<\n>npm -v<\n>flutter --version
+node -v
+$env.PATH
+ls ~/.nvm/versions/node
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+bash -c 'export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && nvm install --lts'
+clear
+ls ~/.nvm/versions/node
+node -v
+clear
+nvim
+source ~/.config/nushell/env.nu<\n>node -v<\n>npm -v
+source ~/.config/nushell/env.nu
+node -v
+which zsh
+clear
+cat /etc/shells
+sudo apt install zsh
+clear
+cat /etc/shells
+cshs -s $(which zsh)
+clear
+cd .config/
+nvim
+cd nushell/
+exit
+zsh
+clear
+cat /etc/shells
+clear
+cshs -s $(which zsh)
+cshs -s (which zsh)
+clear
+which cshs
+which zsh
+chsh -s (which zsh | get path.0)
+clear
+getnet passwd $USSER
+getnet passwd USER
+clear
+cat /etc/passwd | grep $env.USER
+cd .dotfiles/
+nvim
+$env.SHELL
+ls
+clear
+$env.SHELL
+cd
+ls -a
+nvim .zshrc
+clear
+ls =a
+ls -a
+cd .pos
+ls
+/
+celar
+clear
+ls -a
+cd
+ls =a
+ls -a
+clear
+mkdir -p ~/.dotfiles/oh-my-posh/themes
+mkdir  ~/.dotfiles/oh-my-posh/themes
+git clone https://github.com/JanDeDobbeleer/oh-my-posh.git /tmp/oh-my-posh-temp<\n>
+cp /tmp/oh-my-posh-temp/themes/*.omp.json ~/.dotfiles/oh-my-posh/themes/<\n>
+rm -rf /tmp/oh-my-posh-temp<\n>
+clear
+cd .dotfiles/
+nvim
+zsh
+zsh
+cd .dotfiles/
+nvim
+chmod +x ~/.dotfiles/setup-oh-my-posh.sh<\n>~/.dotfiles/setup-oh-my-posh.sh
+clear
+source ~/.zshrc
+zsh
+ls -a
+clar
+nvim .zshrc
+ls
+celar
+clear
+ls -la ~/.zsh* ~/.config/zsh/ 2>/dev/null<\n>
+cd 
+cd .dotfiles/
+nvim
+# Source the updated config<\n>source ~/.zshrc<\n><\n># Check if it loaded<\n>echo $OMP_LOADED<\n>echo $OMP_CURRENT_THEME<\n><\n># Should show your prompt with oh-my-posh
+zsh
+nvim
+zsh
+cd projects/nextjs/
+git clone git@github.com:backbencherstudio/comptajz_zeinabelmini_frontend.git
+clea
+clear
+ls
+git pull --rebase
+git branch -u origin main
+git push
+git push --force
+clear
+ls
+cd projects/nextjs/
+ls
+git clone git@github.com:backbencherstudio/bendrummond1819_dashboard.git
+ls
+clear
+cd bendrummond1819_dashboard/
+ls
+bun i
+nvim
+cd projects/nextjs/bendrummond1819_dashboard/
+opencode
+bun run dev
+cd ..
+cd street_fair_dashboard/
+npm run dev
+which oh-my-posh
+ls
+cd .local/bin
+clear
+/
+cd .local/bin
+ls -a
+cd bin/
+ls
+clear
+cd
+which oh-my-posh
+/
+ls
+cd home/
+ls
+cd nazimuddin/
+ls
+cd .local/bin
+ls
+clear

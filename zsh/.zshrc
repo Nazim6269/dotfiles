@@ -13,98 +13,66 @@
 # =========================================================
 # CORE SHELL OPTIONS
 # =========================================================
-setopt autocd              # cd by typing a directory name
-#setopt correct            # auto correct mistakes (off by default)
-setopt interactivecomments # allow comments in interactive mode
-setopt magicequalsubst     # filename expansion for arguments like "anything=expression"
-setopt nonomatch           # hide error if a glob pattern has no match
+setopt autocd              # `cd` into a directory just by typing its name
+setopt interactivecomments # allow "#" comments in interactive shell
+setopt magicequalsubst     # enable filename expansion after "="
+setopt nonomatch           # don't error out on unmatched globs
 setopt notify              # report background job status immediately
-setopt numericglobsort     # sort filenames numerically when possible
-setopt promptsubst         # enable command substitution in prompt
-
-WORDCHARS='_-' # don't treat these as word boundaries
-
-# Hide the '%' EOL marker some terminals show
-PROMPT_EOL_MARK=""
+setopt numericglobsort     # sort filenames numerically, not lexically
+setopt promptsubst         # allow parameter/command substitution in prompt
 
 # =========================================================
-# KEYBINDINGS
+# TOOLING: Bun, Homebrew, Atuin
 # =========================================================
-bindkey -e                                        # emacs-style bindings
-bindkey ' ' magic-space                            # history expansion on space
-bindkey '^U' backward-kill-line                    # ctrl + U
-bindkey '^[[3;5~' kill-word                        # ctrl + Delete
-bindkey '^[[3~' delete-char                        # delete
-bindkey '^[[1;5C' forward-word                     # ctrl + ->
-bindkey '^[[1;5D' backward-word                     # ctrl + <-
-bindkey '^[[5~' beginning-of-buffer-or-history     # page up
-bindkey '^[[6~' end-of-buffer-or-history           # page down
-bindkey '^[[H' beginning-of-line                   # home
-bindkey '^[[F' end-of-line                         # end
-bindkey '^[[Z' undo                                # shift + tab undo
 
-# =========================================================
-# COMPLETION SYSTEM
-# =========================================================
-autoload -Uz compinit
-# Cache dir is portable across machines via $HOME, not hardcoded
-compinit -d "${ZSH_COMPDUMP:-$HOME/.cache/zcompdump}"
+# --- Local user binaries ---
+# Tools installed via install scripts (not a package manager) commonly
+# land here — e.g. oh-my-posh's official install script puts the binary
+# at ~/.local/bin/oh-my-posh. This directory isn't on PATH by default
+# in every shell/terminal setup, so add it explicitly. (This was the
+# actual cause of oh-my-posh not loading in zsh: the binary was never
+# on PATH at all, in any timing window — no retry could have fixed it.)
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
+# --- Bun ---
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+[ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"   # bun completions (single source of truth, no hardcoded path)
 
-zstyle ':completion:*:*:*:*:*' menu select
-zstyle ':completion:*' auto-description 'specify: %d'
-zstyle ':completion:*' completer _expand _complete
-zstyle ':completion:*' format 'Completing %d'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-zstyle ':completion:*' rehash true
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*' use-compctl false
-zstyle ':completion:*' verbose true
-zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
-
-# =========================================================
-# HISTORY
-# =========================================================
-HISTFILE="$HOME/.zsh_history"
-HISTSIZE=5000
-SAVEHIST=5000
-setopt hist_expire_dups_first  # delete dupes first when HISTFILE exceeds HISTSIZE
-setopt hist_ignore_dups        # ignore duplicate commands in history
-setopt hist_ignore_space       # ignore commands that start with a space
-setopt hist_verify             # confirm history-expanded command before running
-#setopt share_history          # share history across sessions live (off by default)
-
-alias history="history 0"      # show full history
-
-# `time` command output format
-TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'
-
-# =========================================================
-# CHROOT DETECTION (Debian/Kali-style environments)
-# =========================================================
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
+# --- Homebrew ---
+# Try common brew locations (Apple Silicon, Intel mac, Linuxbrew) and load
+# its shell environment (sets PATH, MANPATH, etc.) if found.
+if [ -x /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -x /usr/local/bin/brew ]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+elif [ -x /home/linuxbrew/.linuxbrew/bin/brew ]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
-# =========================================================
-# COLOR PROMPT DETECTION
-# =========================================================
-case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
-esac
+# --- Atuin ---
+[ -f "$HOME/.atuin/bin/env" ] && . "$HOME/.atuin/bin/env"
+command -v atuin >/dev/null 2>&1 && eval "$(atuin init zsh)"
 
-# Force color prompt by default (assumes modern terminal emulator)
-force_color_prompt=yes
+# Zoxide
+eval "$(zoxide init zsh)"
 
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-        color_prompt=yes
-    else
-        color_prompt=
+# =========================================================
+# SYNTAX HIGHLIGHTING
+# =========================================================
+zsh_syntax_highlighting_paths=(
+    "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+    "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+    "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+    "/home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+)
+for highlight_path in "${zsh_syntax_highlighting_paths[@]}"; do
+    if [ -f "$highlight_path" ]; then
+        source "$highlight_path"
+        break
     fi
-fi
+done
+unset highlight_path zsh_syntax_highlighting_paths
 
 # =========================================================
 # STYLISH PROMPT CONFIGURATION
@@ -298,46 +266,109 @@ zsh_autosuggestions_paths=(
 for suggest_path in "${zsh_autosuggestions_paths[@]}"; do
     if [ -f "$suggest_path" ]; then
         source "$suggest_path"
-        ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'  # subtle grey suggestion text
+        ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
         break
     fi
 done
 unset suggest_path zsh_autosuggestions_paths
 
 # =========================================================
-# COMMAND-NOT-FOUND HANDLER (Debian/Kali only — harmless elsewhere)
+# COMMAND-NOT-FOUND HANDLER
 # =========================================================
 if [ -f /etc/zsh_command_not_found ]; then
     . /etc/zsh_command_not_found
 fi
 
 # =========================================================
-# TOOLING: Bun, Homebrew, Atuin
-# All paths below use $HOME instead of a hardcoded username, and each
-# tool is loaded only if actually installed — safe to share across machines.
+# PROMPT THEME: oh-my-posh (with retry)
 # =========================================================
 
-# --- Bun ---
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-[ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
+# Directory where your custom oh-my-posh themes live.
+export OMP_THEMES_DIR="$HOME/.dotfiles/oh-my-posh/themes"
 
-# --- Homebrew (macOS default path OR Linuxbrew) ---
-if [ -x /opt/homebrew/bin/brew ]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"          # macOS (Apple Silicon)
-elif [ -x /usr/local/bin/brew ]; then
-    eval "$(/usr/local/bin/brew shellenv)"             # macOS (Intel)
-elif [ -x /home/linuxbrew/.linuxbrew/bin/brew ]; then
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"  # Linuxbrew
+# Load oh-my-posh at startup, but only if both `oh-my-posh` and `brew`
+# are actually available — previously this ran unconditionally and would
+# throw "command not found" errors on any machine missing Homebrew.
+#
+# NOTE: this also now points at OMP_THEMES_DIR instead of brew's own
+# theme directory, so the startup theme matches what `omp-theme` and
+# `omp-list` below operate on (previously they used two different
+# theme directories, so switching themes with `omp-theme atomic` would
+# not match what loaded at shell startup).
+# (No retry loop needed here — the real cause of the missing prompt was
+# oh-my-posh's install directory (~/.local/bin) not being on PATH at
+# all, which is now fixed once at the top of this file. If PATH is
+# correct, a single check is sufficient.)
+if command -v oh-my-posh >/dev/null 2>&1; then
+    default_theme="$OMP_THEMES_DIR/atomic.omp.json"
+    if [ -f "$default_theme" ]; then
+        eval "$(oh-my-posh init zsh --config "$default_theme")"
+        export OMP_CURRENT_THEME="atomic"
+    elif command -v brew >/dev/null 2>&1; then
+        # Fallback: theme not found locally, use the one bundled with brew's oh-my-posh install
+        eval "$(oh-my-posh init zsh --config "$(brew --prefix oh-my-posh)/themes/atomic.omp.json")"
+        export OMP_CURRENT_THEME="atomic"
+    fi
+    unset default_theme
 fi
 
-# --- Atuin (shell history sync/search) ---
-[ -f "$HOME/.atuin/bin/env" ] && . "$HOME/.atuin/bin/env"
-command -v atuin >/dev/null 2>&1 && eval "$(atuin init zsh)"
+# --- ls aliases ---
+# `nls` is a custom/third-party ls replacement, not guaranteed to be
+# installed everywhere. Fall back to plain `ls` if it's missing so
+# these aliases don't break your shell on a fresh machine.
+if command -v nls >/dev/null 2>&1; then
+    alias ls='nls --group-directories-first'
+    alias ll='nls -lg --group-directories-first'
+else
+    alias ls='ls --group-directories-first'
+    alias ll='ls -lAhF --group-directories-first'
+fi
 
-## Oh oh-my-posh themes
-eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/atomic.omp.json)"
+# Function to switch themes
+function omp-theme() {
+    if [ -z "$1" ]; then
+        echo "Usage: omp-theme <theme-name>"
+        echo "Available themes:"
+        ls -1 "$OMP_THEMES_DIR"/*.omp.json 2>/dev/null | sed 's/.*\/\(.*\)\.omp\.json$/\1/' | column
+        return 1
+    fi
 
+    local theme_file="$OMP_THEMES_DIR/$1.omp.json"
+    if [ ! -f "$theme_file" ]; then
+        echo "❌ Theme '$1' not found"
+        echo "Available themes:"
+        ls -1 "$OMP_THEMES_DIR"/*.omp.json 2>/dev/null | sed 's/.*\/\(.*\)\.omp\.json$/\1/' | column
+        return 1
+    fi
 
-alias ls='nls --group-directories-first'
-alias ll='nls -lg --group-directories-first'
+    echo "🔄 Switching to theme: $1"
+    echo "export OMP_CURRENT_THEME=\"$1\"" > ~/.omp_theme
+    eval "$(oh-my-posh init zsh --config "$theme_file" 2>/dev/null)"
+    export OMP_CURRENT_THEME="$1"
+    export OMP_LOADED="true"
+
+    # Force prompt refresh
+    if [[ -n "$ZLE" ]]; then
+        zle reset-prompt 2>/dev/null || true
+    fi
+    echo "✅ Theme switched to: $1"
+}
+
+# Tab completion for omp-theme
+_omp_theme_completion() {
+    local -a themes
+    themes=($(ls -1 "$OMP_THEMES_DIR"/*.omp.json 2>/dev/null | sed 's/.*\/\(.*\)\.omp\.json$/\1/'))
+    compadd -a themes
+}
+compdef _omp_theme_completion omp-theme
+
+# Aliases
+alias omp-list='ls -1 "$OMP_THEMES_DIR"/*.omp.json 2>/dev/null | sed "s/.*\/\(.*\)\.omp\.json$/\1/" | column'
+alias omp-current='echo "Current theme: ${OMP_CURRENT_THEME:-Not loaded}"'
+
+# =========================================================
+# NVM (Node Version Manager)
+# =========================================================
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                    # loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # loads nvm bash_completion
