@@ -28,7 +28,7 @@ config.window_padding = {
 	top = 8,
 	bottom = 8,
 }
-config.window_background_opacity = 0.9
+-- config.window_background_opacity = 0.9
 config.macos_window_background_blur = 20 -- only applies on macOS
 config.window_frame = {
 	active_titlebar_bg = "#333333",

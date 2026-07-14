@@ -18,7 +18,11 @@ $cmd_duration\
 $line_break\
 $character"""
 add_newline = true
-palette = 'nord'
+palette = 'onedark'
+
+[character]
+success_symbol = '[➜](bold green)'
+error_symbol = '[✗](bold red)'
 
 [directory]
 style = 'bold fg:dark_blue'
@@ -126,3 +130,4 @@ yellow = '#e5c07b'
 gray = '#828997'
 white = '#abb2bf'
 black = '#2c323c'
+teal = '#56b6c2'lack = '#2c323c'

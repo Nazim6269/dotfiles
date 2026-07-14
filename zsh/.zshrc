@@ -6,9 +6,9 @@
 # HAND OFF TO NUSHELL (if installed)
 # Comment this block out if you want to stay in zsh by default.
 # =========================================================
-if command -v nu >/dev/null 2>&1; then
-    exec nu
-fi
+# if command -v nu >/dev/null 2>&1; then
+#     exec nu
+# fi
 
 # =========================================================
 # CORE SHELL OPTIONS
@@ -266,7 +266,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
     alias diff='diff --color=auto'
     alias ip='ip --color=auto'
-
+   
     export LESS_TERMCAP_mb=$'\E[1;31m'     # begin blink
     export LESS_TERMCAP_md=$'\E[1;36m'     # begin bold
     export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
@@ -334,3 +334,10 @@ fi
 # --- Atuin (shell history sync/search) ---
 [ -f "$HOME/.atuin/bin/env" ] && . "$HOME/.atuin/bin/env"
 command -v atuin >/dev/null 2>&1 && eval "$(atuin init zsh)"
+
+## Oh oh-my-posh themes
+eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/atomic.omp.json)"
+
+
+alias ls='nls --group-directories-first'
+alias ll='nls -lg --group-directories-first'
