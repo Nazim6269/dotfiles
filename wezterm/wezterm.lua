@@ -6,7 +6,7 @@ local config = wezterm.config_builder()
 -- Random from favorites list (yours)
 -- =========================================================
 local favorites = {
-	"Aardvark Blue",
+	"AlienBlood",
 }
 math.randomseed(os.time())
 config.color_scheme = favorites[math.random(#favorites)]
@@ -47,7 +47,7 @@ config.show_new_tab_button_in_tab_bar = true
 
 -- TAB BAR - Rounded / Bubbly Colors (mine — tab/window related, priority mine)
 local tab_bg = "#0d1b2a" -- overall bar background
-local active_bg = "#1e90ff" -- active tab fill (bright blue)
+local active_bg = "#228B22" -- active tab fill (bright blue)
 local active_fg = "#ffffff" -- active tab text
 local inactive_bg = "#1a2a3a" -- inactive tab fill
 local inactive_fg = "#7aa3cc" -- inactive tab text
@@ -55,8 +55,8 @@ local hover_bg = "#2a4a6a" -- hovered inactive tab
 local new_btn_fg = "#7aa3cc" -- + button color
 
 config.colors = {
-	cursor_bg = "#1e90ff",
-	cursor_border = "1e90ff",
+	cursor_bg = "#228B22",
+	cursor_border = "#228B22",
 	selection_fg = "black",
 	selection_bg = "#fffacd",
 	scrollbar_thumb = "#222222",
