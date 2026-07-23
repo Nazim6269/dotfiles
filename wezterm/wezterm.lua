@@ -7,13 +7,19 @@ local config = wezterm.config_builder()
 -- =========================================================
 local favorites = {
 	"AlienBlood",
+	"Batman",
+	-- "Jubi",
+	-- "Mariana",
+	-- "Material (base16)",
+	-- "Material (terminal.sexy)",
+	-- "Nature Suede (terminal.sexy)",
 }
 math.randomseed(os.time())
 config.color_scheme = favorites[math.random(#favorites)]
 
 -- FONT (yours)
 config.font = wezterm.font("FiraCode Nerd Font", { weight = "Regular" })
-config.font_size = 16.0
+config.font_size = 18.0
 config.underline_thickness = "2pt"
 config.underline_position = "-4pt"
 

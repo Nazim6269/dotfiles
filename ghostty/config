@@ -1,7 +1,7 @@
 # --- Ghostty Configuration 1.2.3 ---
 
 # Theme & Appearance
-theme = Atom
+theme = Aura
 window-colorspace = display-p3
 macos-titlebar-style = hidden
 custom-shader = /Users/mac/.config/ghostty/shaders/shader.glsl
@@ -20,12 +20,13 @@ window-save-state = always
 
 # Font
 font-family = "MesloLGS NF"
-font-size = 15
+font-size = 18
 
 # Mouse & Interaction
 mouse-hide-while-typing = true
 mouse-scroll-multiplier = 2
 confirm-close-surface = false
+cursor-thickness = 2
 
 # Shell Integration
 # Disables cursor/title control but keeps other features like prompt marking

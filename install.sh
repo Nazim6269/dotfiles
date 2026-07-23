@@ -20,6 +20,7 @@ CONFIGS=(
   "nushell"
   "ghostty"
   "wezterm"
+  "kitty"
 )
 
 for config in "${CONFIGS[@]}"; do
