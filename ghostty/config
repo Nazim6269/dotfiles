@@ -26,7 +26,6 @@ font-size = 18
 mouse-hide-while-typing = true
 mouse-scroll-multiplier = 2
 confirm-close-surface = false
-cursor-thickness = 2
 
 # Shell Integration
 # Disables cursor/title control but keeps other features like prompt marking

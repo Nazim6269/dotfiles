@@ -300,10 +300,10 @@ export OMP_THEMES_DIR="$HOME/.dotfiles/oh-my-posh/themes"
 # all, which is now fixed once at the top of this file. If PATH is
 # correct, a single check is sufficient.)
 if command -v oh-my-posh >/dev/null 2>&1; then
-    default_theme="$OMP_THEMES_DIR/cobalt2.omp.json"
+    default_theme="$OMP_THEMES_DIR/powerlevel10k_lean.omp.json"
     if [ -f "$default_theme" ]; then
         eval "$(oh-my-posh init zsh --config "$default_theme")"
-        export OMP_CURRENT_THEME="atomic"
+        export OMP_CURRENT_THEME="powerlevel10k_lean"
     elif command -v brew >/dev/null 2>&1; then
         # Fallback: theme not found locally, use the one bundled with brew's oh-my-posh install
         eval "$(oh-my-posh init zsh --config "$(brew --prefix oh-my-posh)/themes/atomic.omp.json")"
