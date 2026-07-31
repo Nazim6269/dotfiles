@@ -1,83 +1,84 @@
-local active = "gruvbox"
+--local active = "gruvbox"
+--return {}
 
-return {
-  {
-    --************ gruvox ***************
-    "ellisonleao/gruvbox.nvim",
-    priority = 1000,
-    config = function()
-      local transparent = true -- set to true if you would like to enable transparency
-
-      require("gruvbox").setup({
-        terminal_colors = true, -- add neovim terminal colors
-        undercurl = true,
-        underline = true,
-        bold = true,
-        italic = {
-          strings = true,
-          emphasis = true,
-          comments = true,
-          operators = false,
-          folds = true,
-        },
-        strikethrough = true,
-        invert_selection = false,
-        invert_signs = false,
-        invert_tabline = false,
-        invert_intend_guides = false,
-        inverse = true, -- invert background for search, diffs, statuslines, etc.
-        contrast = "hard", -- can be "hard", "soft" or empty string for default
-        palette_overrides = {},
-        overrides = {},
-        dim_inactive = false,
-        transparent_mode = transparent,
-      })
-
-      if active == "gruvbox" then
-        vim.cmd("colorscheme gruvbox")
-      end
-    end,
-  },
-
-  --************ catppuccin ***************
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    config = function()
-      require("catppuccin").setup({
-        flavour = "mocha",
-        transparent_background = true,
-      })
-      if active == "catppuccin" then
-        vim.cmd.colorscheme("catppuccin")
-      end
-    end,
-  },
-  --********** Rose Pine *********
-  {
-    "rose-pine/neovim",
-    name = "rose-pine",
-    priority = 1000,
-    config = function()
-      require("rose-pine").setup({
-        variant = "main",
-      })
-      if active == "rose-pine" then
-        vim.cmd.colorscheme("rose-pine")
-      end
-    end,
-  },
-
-  --*************** Nightfox ***********
-  {
-    "EdenEast/nightfox.nvim",
-    priority = 1000,
-    config = function()
-      require("nightfox").setup({})
-      if active == "nightfox" then
-        vim.cmd.colorscheme("nightfox")
-      end
-    end,
-  },
-}
+-- return {
+--   {
+--     --************ gruvox ***************
+--     "ellisonleao/gruvbox.nvim",
+--     priority = 1000,
+--     config = function()
+--       local transparent = true -- set to true if you would like to enable transparency
+--
+--       require("gruvbox").setup({
+--         terminal_colors = true, -- add neovim terminal colors
+--         undercurl = true,
+--         underline = true,
+--         bold = true,
+--         italic = {
+--           strings = true,
+--           emphasis = true,
+--           comments = true,
+--           operators = false,
+--           folds = true,
+--         },
+--         strikethrough = true,
+--         invert_selection = false,
+--         invert_signs = false,
+--         invert_tabline = false,
+--         invert_intend_guides = false,
+--         inverse = true, -- invert background for search, diffs, statuslines, etc.
+--         contrast = "hard", -- can be "hard", "soft" or empty string for default
+--         palette_overrides = {},
+--         overrides = {},
+--         dim_inactive = false,
+--         transparent_mode = transparent,
+--       })
+--
+--       if active == "gruvbox" then
+--         vim.cmd("colorscheme gruvbox")
+--       end
+--     end,
+--   },
+--
+--   --************ catppuccin ***************
+--   {
+--     "catppuccin/nvim",
+--     name = "catppuccin",
+--     priority = 1000,
+--     config = function()
+--       require("catppuccin").setup({
+--         flavour = "mocha",
+--         transparent_background = true,
+--       })
+--       if active == "catppuccin" then
+--         vim.cmd.colorscheme("catppuccin")
+--       end
+--     end,
+--   },
+--   --********** Rose Pine *********
+--   {
+--     "rose-pine/neovim",
+--     name = "rose-pine",
+--     priority = 1000,
+--     config = function()
+--       require("rose-pine").setup({
+--         variant = "main",
+--       })
+--       if active == "rose-pine" then
+--         vim.cmd.colorscheme("rose-pine")
+--       end
+--     end,
+--   },
+--
+--   --*************** Nightfox ***********
+--   {
+--     "EdenEast/nightfox.nvim",
+--     priority = 1000,
+--     config = function()
+--       require("nightfox").setup({})
+--       if active == "nightfox" then
+--         vim.cmd.colorscheme("nightfox")
+--       end
+--     end,
+--   },
+-- }
