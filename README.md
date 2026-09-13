@@ -1,6 +1,6 @@
 # 🚀 Dotfiles
 
-My personal development environment setup for quickly restoring my workflow on any machine
+My personal development environment setup for quickly restoring my workflow on any machine.
 
 This repository contains configurations for:
 
