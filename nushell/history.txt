@@ -1563,3 +1563,11 @@ ls
 cd .local/bin
 ls
 clear
+flutter --version
+which flutter
+cd .dotfiles/
+whcih flutter
+cd
+which flutter
+nvim
+zsh

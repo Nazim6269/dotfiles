@@ -31,9 +31,11 @@ setopt promptsubst         # allow parameter/command substitution in prompt
 # at ~/.local/bin/oh-my-posh. This directory isn't on PATH by default
 # in every shell/terminal setup, so add it explicitly. (This was the
 # actual cause of oh-my-posh not loading in zsh: the binary was never
+
 # on PATH at all, in any timing window — no retry could have fixed it.)
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/apps/flutter/bin:$PATH"
 # --- Bun ---
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
@@ -372,3 +374,6 @@ alias omp-current='echo "Current theme: ${OMP_CURRENT_THEME:-Not loaded}"'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                    # loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # loads nvm bash_completion
+
+# opencode
+export PATH=/home/nazimuddin/.opencode/bin:$PATH
